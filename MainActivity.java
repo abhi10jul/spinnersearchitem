@@ -1,4 +1,4 @@
-package www.paymonk.com.spinnersearchitem;
+package abhiandroidknowledge.blogspot.com.spinnersearchitem;
 
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
@@ -12,10 +12,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import java.util.ArrayList;
-
-import in.galaxyofandroid.spinerdialog.SpinnerDialog;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private ArrayList<String> items = new ArrayList<>();
@@ -30,14 +27,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         addItems();
         tvCity = (TextView) findViewById(R.id.txt_result);
         findViewById(R.id.et_spinner_city).setOnClickListener(this);
-        /*spinnerDialog = new SpinnerDialog(MainActivity.this, items, "Select or Search State", R.style.DialogAnimations_SmileWindow, "Close");// With 	Animation
-        spinnerDialog.bindOnSpinerListener(new OnSpinerItemClick() {
-            @Override
-            public void onClick(String item, int position) {
-                Toast.makeText(MainActivity.this, item, Toast.LENGTH_SHORT).show();
-                tvCity.setText(item);
-            }
-        });*/
     }
 
     private void addItems() {
@@ -59,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.et_spinner_city:
-                //spinnerDialog.showSpinerDialog();
                 showSpinnerDialog();
                 break;
 
@@ -92,20 +80,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 alertDialog.dismiss();
-                Toast.makeText(MainActivity.this, adapter.getItem(position).toString() + "  " + position + "", Toast.LENGTH_SHORT).show();
-                tvCity.setText(adapter.getItem(position).toString() + " Position: " + position);
+                Toast.makeText(MainActivity.this, adapter.getItem(position).toString(), Toast.LENGTH_SHORT).show();
+                tvCity.setText(adapter.getItem(position).toString());
             }
         });
 
         searchCity.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
             }
 
             @Override
