@@ -16,7 +16,6 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private ArrayList<String> items = new ArrayList<>();
-    private SpinnerDialog spinnerDialog;
     private ListView listView;
     private TextView tvCity;
 
